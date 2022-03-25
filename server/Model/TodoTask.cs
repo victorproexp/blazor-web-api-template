@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Model
 {
     public class TodoTask
@@ -16,6 +18,7 @@ namespace Model
         public long TodoTaskId { get; set; }
         public string Text { get; set; }
         public bool Done { get; set; }
+        [JsonIgnore]
         public User? User { get; set; }
 
         public override string ToString() {

@@ -38,7 +38,7 @@ Console.WriteLine($"WebRootPath: {builder.Environment.WebRootPath}");
 // Det gør at man kan få TodoContext ind via dependecy injection - fx 
 // i DataService (smart!)
 builder.Services.AddDbContext<TodoContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("TodoContextSQLite")));
+    options.UseSqlServer(builder.Configuration["dbcs"]));
 
 // Kan vise flotte fejlbeskeder i browseren hvis der kommer fejl fra databasen
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
